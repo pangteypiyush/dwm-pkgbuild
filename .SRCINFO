@@ -1,0 +1,17 @@
+pkgbase = dwm
+	pkgdesc = DWM by suckless
+	pkgver = mar19.e301ff8
+	pkgrel = 1
+	url = https://dwm.suckless.org
+	arch = x86_64
+	license = MIT
+	makedepends = make
+	depends = freetype2
+	depends = libx11
+	depends = libxcb
+	depends = libxft
+	source = dwm::git+https://github.com/pangteypiyush/dwm
+	sha256sums = SKIP
+
+pkgname = dwm
+
