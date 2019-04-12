@@ -1,9 +1,9 @@
 # Maintainer: Piyush Pangtey <gokuvsvegita at gmail dot com>
 
 pkgname=dwm
-pkgver=mar19.e301ff8
+pkgver=gruvbox.e91c49d
 pkgrel=1
-_tagver="mar19"
+_tagver="gruvbox"
 pkgdesc="DWM by suckless"
 arch=('x86_64')
 url="https://dwm.suckless.org"
@@ -19,7 +19,7 @@ sha256sums=(
 
 pkgver() {
   cd "${pkgname}"
-  printf "%s.%s" "$(git describe --tags)" "$(git rev-parse --short HEAD)"
+  printf "%s.%s" "$_tagver" "$(git rev-parse --short HEAD)"
 }
 
 prepare() {
@@ -34,5 +34,5 @@ build() {
 package() {
     make -C "$pkgname" PREFIX="usr/" DESTDIR="$pkgdir/" install
     install -Dm644 "$pkgname/LICENSE" "$pkgdir/usr/share/doc/$pkgname/LICENSE"
-    install -Dm644 "$pkgname/README" "$pkgdir/usr/share/doc/$pkgname/README"
+    install -Dm644 "$pkgname/README.md" "$pkgdir/usr/share/doc/$pkgname/README"
 }
